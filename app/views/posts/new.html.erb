@@ -1,0 +1,17 @@
+<h1>Make Something</h1>
+
+<%= form_for :post, url: posts_path do |f| %>
+ <p>
+ 	<%= f.label :title %><nr>
+ 	<%= f.text_field :title%>
+ </p>
+
+ <p>
+ 	<%= f.label :body %><nr>
+ 	<%= f.text_area :body%>
+ </p>
+
+ <p>
+     <%= f.submit %>
+ </p>
+<% end %>
