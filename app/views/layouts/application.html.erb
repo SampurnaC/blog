@@ -1,12 +1,29 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Tumblr</title>
+  <title>BlogApp</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= favicon_link_tag 'favicon_blog.png' %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+<nav class="navbar navbar-inverse ">
+  <div class="container">
+    <div class="navbar-header">
+      <a class="navbar-brand"><%= link_to "BlogApplication", root_path %></a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="#">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">User Login</a></li>
+      
+      <li><%= link_to 'Make Post', new_post_path %></li>
+      <li><a href="#">Log Out</a></li>
+          </ul>
+  </div>
+</nav>
+  
 
 <%= yield %>
 
