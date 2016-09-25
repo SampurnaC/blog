@@ -2,5 +2,6 @@
  <div class="">
    <h2 class="title"><%= link_to post.title, post %> </h2>
    <p class="date"><%= time_ago_in_words(post.created_at) %></p>
+   <%= image_tag post.image.url(:medium) %>
  </div>
  <% end %>
