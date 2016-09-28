@@ -1,0 +1,31 @@
+<%= form_for :post, url: posts_path,class:"form-group", html: { multipart: true } do |f| %>
+
+ <% if @post.errors.any?  %>
+ <h2><%= pluralize(@post.errors.count, "error") %> stopped this post from saving </h2>
+ <ul>
+   <% @post.errors.full_messages.each do |msg| %>
+   <li><%= msg %></li>
+   <% end %>
+ </ul>
+ <% end %>
+ <p>
+ 	<%= f.label :title, class:"col-sm-2 control-label" %><nr>
+ 	<%= f.text_field :title, class: 'form-control' %>
+ </p>
+
+ <p>
+ 	<%= f.label :body, class:"col-sm-2 control-label" %><nr>
+ 	<%= f.text_area :body, class:'form-control', rows: '5' %>
+ </p>
+ <p>
+ 	<%= f.label :image %><nr>
+ 	<%= f.file_field :image %>
+ </p>
+</div>
+ <p>
+     
+     <%= button_tag(type: 'submit', class: "btn btn-primary") do %> Submit Post
+     <% end %>
+ </p>
+ 
+<% end %>

@@ -1,11 +1,22 @@
-<%= image_tag @post.image.url(:medium) %>
+<div class="container">
+<div class="row">
+<div align="center">
 <h1 class="title">
 	<%= @post.title %>
 </h1>
 
 <p class="date">
-	Submitted <%= time_ago_in_words(@post.created_at) %> ago
-</p>
+	<em>Submitted <%= time_ago_in_words(@post.created_at) %> ago</p></em>
+	<%= image_tag @post.image.url(:medium) %>
+	
+
 <p class="body">
 	<%= @post.body %>
 </p>
+<%= link_to 'Edit', edit_post_path(@post), class: 'glyphicon glyphicon-edit btn btn-primary' %>
+	<%= link_to 'Delete', post_path, method: :delete, data: {confirm: 'Are you sure?'}, class: 'glyphicon glyphicon-trash btn btn-danger'  %>
+	</p>
+	</div>
+	</div>
+	</div>
+
