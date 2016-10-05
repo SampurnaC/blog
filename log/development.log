@@ -17903,6 +17903,7 @@ Processing by Devise::SessionsController#new as HTML
   Rendered devise/shared/_links.html.erb (1164.6ms)
   Rendered devise/sessions/new.html.erb within layouts/application (10791.7ms)
 Completed 200 OK in 106990ms (Views: 92257.2ms | ActiveRecord: 0.0ms)
+<<<<<<< HEAD
   [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
 Migrating to CreateComments (20161005130232)
   [1m[35m (0.1ms)[0m  begin transaction
@@ -17936,3 +17937,249 @@ Migrating to CreateComments (20161005130232)
             FROM sqlite_temp_master
             WHERE name='index_users_on_email' AND type='index'
 [0m
+=======
+
+
+Started GET "/posts/new" for 127.0.0.1 at 2016-10-04 07:07:55 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PostsController#new as HTML
+  Rendered posts/_form.html.erb (282.6ms)
+  Rendered posts/new.html.erb within layouts/application (294.4ms)
+Completed 200 OK in 2682ms (Views: 2562.1ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/posts" for 127.0.0.1 at 2016-10-04 07:08:24 -0700
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Yy6HJUBnBuTfw0dHay6KBVtngUs4fPB9+prJQ1R5WulNG66iPoGLE0BQqEey3bUQAv5uQy1pK82N5NLqw7cXNA==", "post"=>{"title"=>"Acer Laptop", "body"=>"sdsdsdsd", "image"=>#<ActionDispatch::Http::UploadedFile:0x007f6331d945b8 @tempfile=#<Tempfile:/tmp/RackMultipart20161004-17552-11j5izx.jpg>, @original_filename="294a6369d13c008dcd850708e7195296.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"post[image]\"; filename=\"294a6369d13c008dcd850708e7195296.jpg\"\r\nContent-Type: image/jpeg\r\n">}, "button"=>""}
+Command :: file -b --mime '/tmp/d0a9b2466ef8a0c3488015afa0e101e020161004-17552-15c6p4a.jpg'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/tmp/d0a9b2466ef8a0c3488015afa0e101e020161004-17552-2z6hdw.jpg[0]' 2>/dev/null
+Command :: identify -format %m '/tmp/d0a9b2466ef8a0c3488015afa0e101e020161004-17552-2z6hdw.jpg[0]'
+Command :: convert '/tmp/d0a9b2466ef8a0c3488015afa0e101e020161004-17552-2z6hdw.jpg[0]' -auto-orient -resize "300x300>" '/tmp/4c5bb3b57e33997f60d9fb6e16bd0a6820161004-17552-egc0x9'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/tmp/d0a9b2466ef8a0c3488015afa0e101e020161004-17552-2z6hdw.jpg[0]' 2>/dev/null
+Command :: identify -format %m '/tmp/d0a9b2466ef8a0c3488015afa0e101e020161004-17552-2z6hdw.jpg[0]'
+Command :: convert '/tmp/d0a9b2466ef8a0c3488015afa0e101e020161004-17552-2z6hdw.jpg[0]' -auto-orient -resize "100x" -crop "100x100+0+23" +repage '/tmp/4c5bb3b57e33997f60d9fb6e16bd0a6820161004-17552-1q74rac'
+  [1m[35m (0.1ms)[0m  begin transaction
+Command :: file -b --mime '/tmp/d0a9b2466ef8a0c3488015afa0e101e020161004-17552-202jyt.jpg'
+  [1m[36mSQL (37.5ms)[0m  [1mINSERT INTO "posts" ("title", "body", "image_file_name", "image_content_type", "image_file_size", "image_updated_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Acer Laptop"], ["body", "sdsdsdsd"], ["image_file_name", "294a6369d13c008dcd850708e7195296.jpg"], ["image_content_type", "image/jpeg"], ["image_file_size", 161559], ["image_updated_at", "2016-10-04 14:08:24.336724"], ["created_at", "2016-10-04 14:08:26.211586"], ["updated_at", "2016-10-04 14:08:26.211586"]]
+  [1m[35m (11.0ms)[0m  commit transaction
+Redirected to http://localhost:3000/posts/24
+Completed 302 Found in 2108ms (ActiveRecord: 48.6ms)
+
+
+Started GET "/posts/24" for 127.0.0.1 at 2016-10-04 07:08:26 -0700
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"24"}
+  [1m[36mPost Load (0.4ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 24]]
+  Rendered posts/show.html.erb within layouts/application (21.2ms)
+Completed 200 OK in 320ms (Views: 222.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/posts/24/edit" for 127.0.0.1 at 2016-10-04 07:08:29 -0700
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"24"}
+  [1m[35mPost Load (0.1ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 24]]
+  Rendered posts/_form.html.erb (2.7ms)
+  Rendered posts/edit.html.erb within layouts/application (14.9ms)
+Completed 200 OK in 127ms (Views: 124.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/posts/24/edit" for 127.0.0.1 at 2016-10-04 07:08:36 -0700
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"24"}
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 24]]
+  Rendered posts/_form.html.erb (7.5ms)
+  Rendered posts/edit.html.erb within layouts/application (13.2ms)
+Completed 200 OK in 175ms (Views: 173.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/application.self-9da628e20d2c223d54c15ac68df0fd3cc696c3f61e80644b11c149f6f13f69bb.css?body=1" for 127.0.0.1 at 2016-10-04 07:08:36 -0700
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for 127.0.0.1 at 2016-10-04 07:08:36 -0700
+
+
+Started GET "/assets/jquery.self-c03f4eaf1119e6e68820418ad53c328101312ebc906325c60ad7c32edaa360b7.js?body=1" for 127.0.0.1 at 2016-10-04 07:08:36 -0700
+
+
+Started GET "/assets/bootstrap/button.self-a6cb16785434acb365ae426aef9f1fce05ed553cae7a965e4471c3da71509175.js?body=1" for 127.0.0.1 at 2016-10-04 07:08:36 -0700
+
+
+Started GET "/assets/bootstrap/alert.self-a29e91e8cd3ddaba9bbc466901d53ec2127e9256b9b941905d525a3a716bd1a5.js?body=1" for 127.0.0.1 at 2016-10-04 07:08:36 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-10-04 07:08:36 -0700
+
+
+Started GET "/assets/bootstrap/affix.self-d2b642d8fbfc1d7041e2edefd66683ada567a980789dcd6f94fddda0b33408b5.js?body=1" for 127.0.0.1 at 2016-10-04 07:08:36 -0700
+
+
+Started GET "/assets/bootstrap/carousel.self-57eb8422043cf0a85b7a9dc6843916eb0a3e35b419c7798a5eb254b918997631.js?body=1" for 127.0.0.1 at 2016-10-04 07:08:36 -0700
+
+
+Started GET "/assets/bootstrap/collapse.self-7dc8bfbc2fbfabd2bad62c58ff8ffeaf8f20fb87c7ca6cd35f06d4dc19632587.js?body=1" for 127.0.0.1 at 2016-10-04 07:08:37 -0700
+
+
+Started GET "/assets/bootstrap/dropdown.self-9314126777c6be5443e37ea7f7967d7914d72b3e60449ba50edc967446373059.js?body=1" for 127.0.0.1 at 2016-10-04 07:08:37 -0700
+
+
+Started GET "/assets/bootstrap/tab.self-122235057fbd4c6c7da377d59dc58f47b44cb1088a2e38e6ee6ce9d8ac29a26a.js?body=1" for 127.0.0.1 at 2016-10-04 07:08:37 -0700
+
+
+Started GET "/assets/bootstrap/transition.self-09ff30b1e8a93d1f7728b9855f55d9c9d8d5734c8861e0d8139994e50944572a.js?body=1" for 127.0.0.1 at 2016-10-04 07:08:37 -0700
+
+
+Started GET "/assets/bootstrap/scrollspy.self-a155b9d4b2f978905f0326c0f6635e1134fe91c6bfbfcbad079fa24a9fef2b0e.js?body=1" for 127.0.0.1 at 2016-10-04 07:08:37 -0700
+
+
+Started GET "/assets/bootstrap/modal.self-72f95ffa1071297725a9ac91989693d56d1abf23f441a47455073b0da2857a5b.js?body=1" for 127.0.0.1 at 2016-10-04 07:08:37 -0700
+
+
+Started GET "/assets/bootstrap/tooltip.self-11cf547be953f25f511cec668f6690473fd97b2f65502e4032f4030999a3f0c3.js?body=1" for 127.0.0.1 at 2016-10-04 07:08:37 -0700
+
+
+Started GET "/assets/bootstrap-sprockets.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for 127.0.0.1 at 2016-10-04 07:08:37 -0700
+
+
+Started GET "/assets/bootstrap/popover.self-77d8e3a2499c1104ef146396a68b82469ee2bdb365199b874694698d10405e9a.js?body=1" for 127.0.0.1 at 2016-10-04 07:08:37 -0700
+
+
+Started GET "/assets/posts.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-04 07:08:37 -0700
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for 127.0.0.1 at 2016-10-04 07:08:37 -0700
+
+
+Started POST "/posts" for 127.0.0.1 at 2016-10-04 07:08:42 -0700
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"29BZikbzGosetIZqMEec4OjJxVfJAuBVDJnkkKAI1Uz15XANOBWXfIEnaWrptKP1sVAqX9wXO+V75/85N8aYkQ==", "post"=>{"title"=>"Acer Laptop", "body"=>"sdsdsdsd", "image"=>#<ActionDispatch::Http::UploadedFile:0x007f6331f15d60 @tempfile=#<Tempfile:/tmp/RackMultipart20161004-17552-1vv7hhd.jpg>, @original_filename="sonam-kapoor-35a.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"post[image]\"; filename=\"sonam-kapoor-35a.jpg\"\r\nContent-Type: image/jpeg\r\n">}, "button"=>""}
+Command :: file -b --mime '/tmp/3dbc1c228988747c9b4f8546b1cf0ff620161004-17552-tguh4m.jpg'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/tmp/3dbc1c228988747c9b4f8546b1cf0ff620161004-17552-1cw9jh9.jpg[0]' 2>/dev/null
+Command :: identify -format %m '/tmp/3dbc1c228988747c9b4f8546b1cf0ff620161004-17552-1cw9jh9.jpg[0]'
+Command :: convert '/tmp/3dbc1c228988747c9b4f8546b1cf0ff620161004-17552-1cw9jh9.jpg[0]' -auto-orient -resize "300x300>" '/tmp/ce54316f7b2773aee9bbb178d4f9fdfa20161004-17552-1af216m'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/tmp/3dbc1c228988747c9b4f8546b1cf0ff620161004-17552-1cw9jh9.jpg[0]' 2>/dev/null
+Command :: identify -format %m '/tmp/3dbc1c228988747c9b4f8546b1cf0ff620161004-17552-1cw9jh9.jpg[0]'
+Command :: convert '/tmp/3dbc1c228988747c9b4f8546b1cf0ff620161004-17552-1cw9jh9.jpg[0]' -auto-orient -resize "x100" -crop "100x100+16+0" +repage '/tmp/ce54316f7b2773aee9bbb178d4f9fdfa20161004-17552-1vj2g12'
+  [1m[35m (0.1ms)[0m  begin transaction
+Command :: file -b --mime '/tmp/3dbc1c228988747c9b4f8546b1cf0ff620161004-17552-5skxz6.jpg'
+  [1m[36mSQL (2.9ms)[0m  [1mINSERT INTO "posts" ("title", "body", "image_file_name", "image_content_type", "image_file_size", "image_updated_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Acer Laptop"], ["body", "sdsdsdsd"], ["image_file_name", "sonam-kapoor-35a.jpg"], ["image_content_type", "image/jpeg"], ["image_file_size", 280180], ["image_updated_at", "2016-10-04 14:08:42.929230"], ["created_at", "2016-10-04 14:08:43.766733"], ["updated_at", "2016-10-04 14:08:43.766733"]]
+  [1m[35m (7.9ms)[0m  commit transaction
+Redirected to http://localhost:3000/posts/25
+Completed 302 Found in 892ms (ActiveRecord: 10.9ms)
+
+
+Started GET "/posts/25" for 127.0.0.1 at 2016-10-04 07:08:43 -0700
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"25"}
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 25]]
+  Rendered posts/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 155ms (Views: 153.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2016-10-04 07:08:52 -0700
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (8.3ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (89.1ms)
+Completed 200 OK in 378ms (Views: 290.0ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2016-10-04 07:09:04 -0700
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.html.erb (9.7ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (17.7ms)
+Completed 200 OK in 178ms (Views: 176.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_out" for 127.0.0.1 at 2016-10-04 07:09:09 -0700
+
+ActionController::RoutingError (No route matches [GET] "/users/sign_out"):
+  /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  /usr/lib/ruby/vendor_ruby/web_console/middleware.rb:39:in `call'
+  /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  /usr/lib/ruby/vendor_ruby/rails/rack/logger.rb:38:in `call_app'
+  /usr/lib/ruby/vendor_ruby/rails/rack/logger.rb:20:in `block in call'
+  /usr/lib/ruby/vendor_ruby/active_support/tagged_logging.rb:68:in `block in tagged'
+  /usr/lib/ruby/vendor_ruby/active_support/tagged_logging.rb:26:in `tagged'
+  /usr/lib/ruby/vendor_ruby/active_support/tagged_logging.rb:68:in `tagged'
+  /usr/lib/ruby/vendor_ruby/rails/rack/logger.rb:20:in `call'
+  /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/request_id.rb:21:in `call'
+  /usr/lib/ruby/vendor_ruby/rack/methodoverride.rb:22:in `call'
+  /usr/lib/ruby/vendor_ruby/rack/runtime.rb:18:in `call'
+  /usr/lib/ruby/vendor_ruby/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  /usr/lib/ruby/vendor_ruby/rack/lock.rb:17:in `call'
+  /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/static.rb:120:in `call'
+  /usr/lib/ruby/vendor_ruby/rack/sendfile.rb:113:in `call'
+  /usr/lib/ruby/vendor_ruby/rails/engine.rb:518:in `call'
+  /usr/lib/ruby/vendor_ruby/rails/application.rb:165:in `call'
+  /usr/lib/ruby/vendor_ruby/rack/lock.rb:17:in `call'
+  /usr/lib/ruby/vendor_ruby/rack/content_length.rb:15:in `call'
+  /usr/lib/ruby/vendor_ruby/rack/handler/webrick.rb:88:in `service'
+  /usr/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /usr/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /usr/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/templates/rescues/_trace.html.erb (9.2ms)
+  Rendered /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/templates/routes/_route.html.erb (7.0ms)
+  Rendered /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/templates/routes/_table.html.erb (16.2ms)
+  Rendered /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.6ms)
+  Rendered /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (151.1ms)
+  Rendered /usr/lib/ruby/vendor_ruby/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /usr/lib/ruby/vendor_ruby/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (1.0ms)
+  Rendered /usr/lib/ruby/vendor_ruby/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /usr/lib/ruby/vendor_ruby/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /usr/lib/ruby/vendor_ruby/web_console/templates/console.js.erb within layouts/javascript (29.1ms)
+  Rendered /usr/lib/ruby/vendor_ruby/web_console/templates/main.js.erb within layouts/javascript (0.6ms)
+  Rendered /usr/lib/ruby/vendor_ruby/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /usr/lib/ruby/vendor_ruby/web_console/templates/index.html.erb (63.2ms)
+
+
+Started GET "/users/sign_out" for 127.0.0.1 at 2016-10-04 07:09:10 -0700
+
+ActionController::RoutingError (No route matches [GET] "/users/sign_out"):
+  /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  /usr/lib/ruby/vendor_ruby/web_console/middleware.rb:39:in `call'
+  /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  /usr/lib/ruby/vendor_ruby/rails/rack/logger.rb:38:in `call_app'
+  /usr/lib/ruby/vendor_ruby/rails/rack/logger.rb:20:in `block in call'
+  /usr/lib/ruby/vendor_ruby/active_support/tagged_logging.rb:68:in `block in tagged'
+  /usr/lib/ruby/vendor_ruby/active_support/tagged_logging.rb:26:in `tagged'
+  /usr/lib/ruby/vendor_ruby/active_support/tagged_logging.rb:68:in `tagged'
+  /usr/lib/ruby/vendor_ruby/rails/rack/logger.rb:20:in `call'
+  /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/request_id.rb:21:in `call'
+  /usr/lib/ruby/vendor_ruby/rack/methodoverride.rb:22:in `call'
+  /usr/lib/ruby/vendor_ruby/rack/runtime.rb:18:in `call'
+  /usr/lib/ruby/vendor_ruby/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  /usr/lib/ruby/vendor_ruby/rack/lock.rb:17:in `call'
+  /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/static.rb:120:in `call'
+  /usr/lib/ruby/vendor_ruby/rack/sendfile.rb:113:in `call'
+  /usr/lib/ruby/vendor_ruby/rails/engine.rb:518:in `call'
+  /usr/lib/ruby/vendor_ruby/rails/application.rb:165:in `call'
+  /usr/lib/ruby/vendor_ruby/rack/lock.rb:17:in `call'
+  /usr/lib/ruby/vendor_ruby/rack/content_length.rb:15:in `call'
+  /usr/lib/ruby/vendor_ruby/rack/handler/webrick.rb:88:in `service'
+  /usr/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /usr/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /usr/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/templates/rescues/_trace.html.erb (6.8ms)
+  Rendered /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/templates/routes/_route.html.erb (18.9ms)
+  Rendered /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/templates/routes/_table.html.erb (1.3ms)
+  Rendered /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (4.7ms)
+  Rendered /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (66.2ms)
+  Rendered /usr/lib/ruby/vendor_ruby/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /usr/lib/ruby/vendor_ruby/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /usr/lib/ruby/vendor_ruby/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /usr/lib/ruby/vendor_ruby/web_console/templates/style.css.erb within layouts/inlined_string (3.1ms)
+  Rendered /usr/lib/ruby/vendor_ruby/web_console/templates/console.js.erb within layouts/javascript (58.5ms)
+  Rendered /usr/lib/ruby/vendor_ruby/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /usr/lib/ruby/vendor_ruby/web_console/templates/error_page.js.erb within layouts/javascript (8.1ms)
+  Rendered /usr/lib/ruby/vendor_ruby/web_console/templates/index.html.erb (123.8ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2016-10-04 07:09:16 -0700
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (0.4ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (17.3ms)
+Completed 200 OK in 228ms (Views: 227.0ms | ActiveRecord: 0.0ms)
+>>>>>>> a6646a4e2e9b7e7a066a1dc4933dc5b031627417
