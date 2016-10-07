@@ -6,8 +6,23 @@
    <h2 class="title"><%= link_to post.title, post %> </h2>
    <p><%= truncate(post.body, length:100) %></p>
    <p class="date"><%= time_ago_in_words(post.created_at) %></p>
-   <%= image_tag post.image.url(:medium), class: 'img-thumbnail' %>
- </div>
+   <%= image_tag post.image.url(:medium), class: 'img-thumbnail' %><br>
+ 
+
+     <%= link_to like_post_path(post), class: 'like', method: :put do %>
+       <button type="button" class="btn btn-info aria-label="Left Align">
+       	<span class="glyphicon glyphicon-thumbs-up glyphicon-align-center" aria-hidden="true"></span>
+       	<span class="badge"><%= post.get_upvotes.size %></span>
+       </button>
+     <% end %>
+
+     <%= link_to unlike_post_path(post), class: 'like', method: :put do %>
+       <button type="button" class="btn btn-info aria-label="Left Align">
+       	<span class="glyphicon glyphicon-thumbs-down glyphicon-align-center" aria-hidden="true"></span>
+       	<span class="badge"><%= post.get_downvotes.size %></span>
+       </button>
+       </div>
+     <% end %>
  <% end %>
  
  </div>
