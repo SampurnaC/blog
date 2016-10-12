@@ -26,7 +26,8 @@ gem 'devise', '~> 3.4.0'
 gem 'acts_as_votable'
 gem 'will_paginate', '~> 3.1'
 gem 'will_paginate-bootstrap'
-
+gem 'font-awesome-rails'
+gem 'wysiwyg-rails'
 
 
 # bundle exec rake doc:rails generates the API under doc/api.

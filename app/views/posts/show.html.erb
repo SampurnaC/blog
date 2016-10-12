@@ -10,10 +10,11 @@
 <%= image_tag @post.image.url(:medium), class: 'img-thumbnail' %>
     </div>
 	
-
+<div class="froala-view">
 <p class="body">
- <%= @post.body %>
+ <%= simple_format(@post.body) %>
 </p>
+</div>
 
 <% if user_signed_in? %>
 <%= link_to 'Edit', edit_post_path(@post), class: 'glyphicon glyphicon-edit btn btn-primary' %>
