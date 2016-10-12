@@ -6,8 +6,9 @@
 </h1>
 
 <p class="date"><em>Submitted <%= time_ago_in_words(@post.created_at) %> ago</p></em>
-	
+	<div class="showimages">
 <%= image_tag @post.image.url(:medium), class: 'img-thumbnail' %>
+    </div>
 	
 
 <p class="body">
